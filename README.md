@@ -6,22 +6,24 @@
 Analytics description
 
 # Table of contents:
-![Build status](https://img.shields.io/travis/request/request/master.svg?style=flat-square)  ![Dependency Status](https://img.shields.io/david/request/request.svg?style=flat-square) ![Known Vulnerabilities](https://snyk.io/test/npm/request/badge.svg?style=flat-square)
-- [Pre-reqs](#pre-reqs)
-- [Getting started](#getting-started)
-- [Analytics Backend](#Analytics-backend)
-	- [Project Structure](#project-structure)
-	- [ESLint](#eslint)
-- [Dependencies](#dependencies)
-	- [`dependencies`](#dependencies-1)
-	- [`devDependencies`](#devdependencies)
+Pre-reqs
+
+Getting Started
+
+Project Structure
+
+Scripts
+
+Linting
+
+Dependencies
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
-- Install [Node.js](https://nodejs.org/en/)(VERSION 10.16.0)
-- Install [Sequelize](http://docs.sequelizejs.com/manual/getting-started.html#installing)(VERSION 5.9.4)
-- Install [Sequelize-CLI](https://www.npmjs.com/package/sequelize-cli)(VERSION 5.5.0)
-- Install [VS Code](https://code.visualstudio.com/)
+- Install [Node.js](VERSION 10.16.0)
+- Install [Sequelize](VERSION 5.9.4)
+- Install [Sequelize-CLI](VERSION 5.5.0)
+- Install [VS Code]
 
 # Getting started
 - Clone the repository
@@ -119,7 +121,7 @@ In that file you'll find two sections:
 | sequelize                       | Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server.             |
 | winston                         | Logging library                                                       |
 | axios                         | Promise based HTTP client for the browser and node.js                                                      |
-| cors                         | package for providing a [Connect](http://www.senchalabs.org/connect/)/[Express](http://expressjs.com/) middleware that can be used to enable [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) with various options                                                      |
+| cors                         | Cross-Origin Resource Sharing middleware                                                      |
 | webpack                         | A module bundler. Its main purpose is to bundle JavaScript files.                        |
 | connect-timeout                         | Times out a request in the Connect/Express application framework.                                                    |
 | sequelize-typescript                        | Give Typescript definitions for sequelize.                                                    |
@@ -149,7 +151,6 @@ In that file you'll find two sections:
 | tslint                         | TSLint is an extensible static analysis tool that checks TypeScript code for readability, maintainability, and functionality errors  |
 | typescript                         | C_TypeScript_ is a language for application scale JavaScript development.  |
 | webpack-cli                         | CLI for webpack. |
-| webpack-node-externals                       | Webpack allows you to define [_externals_](https://webpack.js.org/configuration/externals) - modules that should not be bundled.                             |
+| webpack-node-externals                       | Exclude node modules from webpack bundle                          |
 
-To install or update these dependencies you can use `npm install` or `npm update`.
 
