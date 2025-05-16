@@ -1,0 +1,98 @@
+paths:
+  /admin/payer-type:
+    post:
+      tags: [Admin Dashboard]
+      summary: "Analytic report by Payer Type to show top payers in each category (Patient, Employer, Insurance)"
+      produces:
+        - application/json
+      requestBody:
+        description: "Request body for filtering Payer Type report"
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_span_id:
+                  description: "An integer representing the time period (1: 1 week, 2: 1 month, 3: 6 months, 4: 1 year, 5: Month to Date)"
+                  required: false
+                  type: integer
+                  enum: [1, 2, 3, 4, 5]
+                month_id:
+                  description: "An integer representing the month in months dropdown: 1: January, 2: February, 3: March, 4: April, 5: May, 6: June, 7: July, 8: August, 9: September, 10: October, 11: November, 12: December"
+                  required: false
+                  type: integer
+                  enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                speciality_ids:
+                  description: "Comma-separated list of speciality IDs"
+                  required: false
+                  type: string
+                provider_ids:
+                  description: "Comma-separated list of provider IDs"
+                  required: false
+                  type: string
+                facility_location_ids:
+                  description: "Comma-separated list of facility location IDs"
+                  required: false
+                  type: string
+                fromDate:
+                  description: "Retrieve data for summary charts from this date (Format: YYYY-MM-DD)"
+                  required: false
+                  type: string
+                  format: date
+                toDate:
+                  description: "Retrieve data for summary charts up to this date (Format: YYYY-MM-DD)"
+                  required: false
+                  type: string
+                  format: date
+                granularity_type_id:
+                  description: "An integer representing the granularity (1: daily, 2: weekly, 3: monthly, 4: yearly)"
+                  required: false
+                  type: integer
+                  enum: [1, 2, 3, 4]
+                payer_type_id:
+                  description: "An integer representing the payer (1: Patient, 2: Employer, 3: Insurance)"
+                  required: true
+                  type: integer
+                  enum: [1, 2, 3]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: "Filtered Data returned"
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/payerTyperesponseData"
+          example: []
+        404:
+          description: "Data not found"
+definitions:
+  payerTyperesponseData:
+    type: array
+    items:
+      type: object
+      properties:
+        payer_type_id:
+          type: integer
+          example: 1
+        payer_type_name:
+          type: string
+          example: Patient
+        payer_data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 23
+              name:
+                type: string
+                example: Ovada LLC
+              bills_count:
+                type: integer
+                example: 456
+              paid_amount:
+                type: number
+                example: 35243.05

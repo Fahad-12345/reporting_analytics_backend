@@ -1,0 +1,98 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "cm-analytics",
+      "image": "377359377342.dkr.ecr.us-east-1.amazonaws.com/cm-analytics:latest",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "name": "cm-analytics-3000-tcp",
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "secrets": [
+        {
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:377359377342:secret:dev/postgres/analytics-Qa0LZP:dbPasswordPostgresAnalytics::",
+          "name": "WRITE_DATABASE_PASSWORD"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:377359377342:secret:dev/postgres/analytics-Qa0LZP:dbPasswordPostgresAnalytics::",
+          "name": "READ_DATABASE_PASSWORD"
+        }
+      ],
+      "environment": [
+        {
+          "name": "PORT",
+          "value": "3000"
+        },
+        {
+          "name": "NODE_ENVR",
+          "value": "development"
+        },
+        {
+          "name": "ENV_LANG",
+          "value": "en"
+        },
+        {
+          "name": "WRITE_DATABASE_USERNAME",
+          "value": "dbUser"
+        },
+        {
+          "name": "WRITE_DATABASE_NAME",
+          "value": "ovada_analytics_development"
+        },
+        {
+          "name": "WRITE_DATABASE_HOST",
+          "value": "analytics-db.culcnqyn18ni.us-east-1.rds.amazonaws.com"
+        },
+        {
+          "name": "DATABASE_PORT",
+          "value": "5432"
+        },
+        {
+          "name": "READ_DATABASE_NAME",
+          "value": "ovada_analytics_development"
+        },
+        {
+          "name": "READ_DATABASE_USERNAME",
+          "value": "dbUser"
+        },
+        {
+          "name": "READ_DATABASE_HOST",
+          "value": "analytics-db.culcnqyn18ni.us-east-1.rds.amazonaws.com"
+        }
+      ],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "ulimits": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/cm-analytics",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        },
+        "secretOptions": []
+      }
+    }
+  ],
+  "family": "cm-analytics",
+  "taskRoleArn": "arn:aws:iam::377359377342:role/task-execution",
+  "executionRoleArn": "arn:aws:iam::377359377342:role/task-execution",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  }
+}

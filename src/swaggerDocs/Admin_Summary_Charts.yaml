@@ -1,0 +1,169 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Summary Charts Data"
+description: "This API provides summary charts data including current and previous values for various financial metrics such as interest, billed amount, payment received, account receivable, and writeoff. Developers can use this data to analyze financial trends and insights. Authorization is required to access this API."
+basePath: /analytics/api
+schemes:
+  - http
+paths:
+  /admin/summary-charts:
+    post:
+      tags: [Admin Dashboard]
+      summary: "Retrieve Summary Charts Data"
+      description: "This API provides summary charts data including current and previous values for various financial metrics such as interest, billed amount, payment received, account receivable, and writeoff. Developers can use this data to analyze financial trends and insights. Authorization is required to access this API."
+      parameters: []
+      requestBody:
+        description: "Request body for filters."
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_span_id:
+                  type: integer
+                  description: >
+                    An integer representing the time period:
+                    - 1: 1 week
+                    - 2: 1 month
+                    - 3: 6 months
+                    - 4: 1 year
+                    - 5: Month to Date
+                  enum: [1, 2, 3, 4, 5]
+                month_id:
+                  type: integer
+                  description: >
+                    An integer representing the month in months dropdown:
+                    - 1: January
+                    - 2: February
+                    - 3: March
+                    - 4: April
+                    - 5: May
+                    - 6: June
+                    - 7: July
+                    - 8: August
+                    - 9: September
+                    - 10: October
+                    - 11: November
+                    - 12: December
+                  enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                speciality_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                provider_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                facility_location_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                fromDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data from this date.
+                    Format: YYYY-MM-DD
+                toDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data up to this date.
+                    Format: YYYY-MM-DD
+                granularity_type_id:
+                  type: integer
+                  description: >
+                    An integer representing the granularity:
+                    - 1: daily
+                    - 2: weekly
+                    - 3: monthly
+                    - 4: yearly
+                  enum: [1, 2, 3, 4]
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  status:
+                    type: integer
+                  result:
+                    type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          current_interest:
+                            type: string
+                            example: "249.26"
+                          previous_interest:
+                            type: string
+                            example: "1835.73"
+                          current_billed:
+                            type: string
+                            example: "15959507.79"
+                          previous_billed:
+                            type: string
+                            example: "11728614.97"
+                          total_payment_received:
+                            type: string
+                            example: "4338514.60"
+                          previous_payment_received:
+                            type: string
+                            example: "4215583.72"
+                          current_account_receivable:
+                            type: string
+                            example: "12520037.85"
+                          previous_account_receivable:
+                            type: string
+                            example: "7275214.19"
+                          current_writeoff:
+                            type: string
+                            example: "565.69"
+                          previous_writeoff:
+                            type: string
+                            example: "1236.59"
+                          interest_difference:
+                            type: string
+                            example: "86.42"
+                          billed_difference:
+                            type: string
+                            example: "36.07"
+                          payment_received_difference:
+                            type: string
+                            example: "2.92"
+                          account_receivable_difference:
+                            type: string
+                            example: "72.09"
+                          writeoff_difference:
+                            type: string
+                            example: "54.25"
+                          isInterestPositive:
+                            type: boolean
+                          isBilledPositive:
+                            type: boolean
+                          isPaymentPositive:
+                            type: boolean
+                          isReceivablesPositive:
+                            type: boolean
+                          isWriteoffPositive:
+                            type: boolean
+        400:
+          description: "Bad request"
+        401:
+          description: "You are not authorized"
+        404:
+          description: "Data not found for given parameters"
+        500:
+          description: "Internal server error"

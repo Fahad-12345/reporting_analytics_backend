@@ -1,0 +1,137 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Practice Manager Dashboard API"
+  description: "This API provides data to analyze average, minimum, and maximum gaps between the date of service and billed date, and average appointment duration. It can be used by developers to build charts for insights. Authorization is required to access this API."
+basePath: /analytics/api
+schemes:
+  - http
+paths:
+  /practice-manager/gap-duration:
+    post:
+      tags: [Practice Manager Dashboard]
+      summary: "Retrieve average, minimum, and maximum appointment duration and average gap between billed date and date of service"
+      description: "This API provides data to analyze average, minimum, and maximum gaps between the date of service and billed date, and average appointment duration. It can be used by developers to build charts for insights. Authorization is required to access this API."
+      parameters: []
+      requestBody:
+        description: "Request body for filters."
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_span_id:
+                  type: integer
+                  description: >
+                    An integer representing the time period:
+                    - 1: 1 week
+                    - 2: 1 month
+                    - 3: 6 months
+                    - 4: 1 year
+                    - 5: Month to Date
+                  enum: [1, 2, 3, 4, 5]
+                month_id:
+                  type: integer
+                  description: >
+                    An integer representing the month in months dropdown:
+                    - 1: January
+                    - 2: February
+                    - 3: March
+                    - 4: April
+                    - 5: May
+                    - 6: June
+                    - 7: July
+                    - 8: August
+                    - 9: September
+                    - 10: October
+                    - 11: November
+                    - 12: December
+                  enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                speciality_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                provider_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                facility_location_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                fromDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for summary charts from this date.
+                    Format: YYYY-MM-DD
+                toDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for summary charts up to this date.
+                    Format: YYYY-MM-DD
+                granularity_type_id:
+                  type: integer
+                  description: >
+                    An integer representing the granularity:
+                    - 1: daily
+                    - 2: weekly
+                    - 3: monthly
+                    - 4: yearly
+                  enum: [1, 2, 3, 4]
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  status:
+                    type: integer
+                  result:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            average_duration_time:
+                              type: number
+                              nullable: true
+                              description: "Average duration time of the appointment"
+                            minimum_duration_time:
+                              type: number
+                              nullable: true
+                              description: "Minimum duration time of the appointment"
+                            maximum_duration_time:
+                              type: number
+                              nullable: true
+                              description: "Maximum duration time of the appointment"
+                            average_gap_days:
+                              type: string
+                              description: "Average gap days between billed date and date of service"
+                            minimum_gap_days:
+                              type: integer
+                              description: "Minimum gap days between billed date and date of service"
+                            maximum_gap_days:
+                              type: integer
+                              description: "Maximum gap days between billed date and date of service"
+        400:
+          description: "Bad request"
+        401:
+          description: "You are not authorized"
+        404:
+          description: "Data not found for given parameters"
+        500:
+          description: "Internal server error"

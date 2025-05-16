@@ -1,0 +1,144 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Outstanding Amount by Age Range"
+  description: "This API provides data to analyze outstanding amounts categorized by age ranges. This data can be used by developers to build charts and gain insights into financial metrics based on different age ranges. Authorization is required to access this API."
+basePath: /analytics/api
+schemes:
+  - http
+paths:
+  /admin/sum-amounts:
+    post:
+      tags: [Admin Dashboard]
+      summary: "Outstanding Amount by Age Range"
+      description: "This API provides data to analyze outstanding amounts categorized by age ranges. This data can be used by developers to build charts and gain insights into financial metrics based on different age ranges. Authorization is required to access this API."
+      parameters: []
+      requestBody:
+        description: "Request body for filters."
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_span_id:
+                  type: integer
+                  description: >
+                    An integer representing the time period:
+                    - 1: 1 week
+                    - 2: 1 month
+                    - 3: 6 months
+                    - 4: 1 year
+                    - 5: Month to Date
+                  enum: [1, 2, 3, 4, 5]
+                month_id:
+                  type: integer
+                  description: >
+                    An integer representing the month in months dropdown:
+                    - 1: January
+                    - 2: February
+                    - 3: March
+                    - 4: April
+                    - 5: May
+                    - 6: June
+                    - 7: July
+                    - 8: August
+                    - 9: September
+                    - 10: October
+                    - 11: November
+                    - 12: December
+                  enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                speciality_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                provider_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                facility_location_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                fromDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data from this date.
+                    Format: YYYY-MM-DD
+                toDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data up to this date.
+                    Format: YYYY-MM-DD
+                granularity_type_id:
+                  type: integer
+                  description: >
+                    An integer representing the granularity:
+                    - 1: daily
+                    - 2: weekly
+                    - 3: monthly
+                    - 4: yearly
+                  enum: [1, 2, 3, 4]
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  status:
+                    type: integer
+                  result:
+                    type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          "0-30":
+                            type: number
+                            example: 1492302.0700000003
+                          "31-60":
+                            type: number
+                            example: 3205147.3099999996
+                          "61-90":
+                            type: number
+                            example: 2412265.56
+                          "91-120":
+                            type: number
+                            example: 2029617.29
+                          "121-150":
+                            type: number
+                            example: 1939759.1700000002
+                          "151-180":
+                            type: number
+                            example: 1306400.8700000003
+                          "181-210":
+                            type: number
+                            example: 103429.31
+                          "211-240":
+                            type: number
+                            example: 0
+                          "241-270":
+                            type: number
+                            example: 0
+                          "270+":
+                            type: number
+                            example: 0
+        400:
+          description: "Bad request"
+        401:
+          description: "You are not authorized"
+        404:
+          description: "Data not found for given parameters"
+        500:
+          description: "Internal server error"

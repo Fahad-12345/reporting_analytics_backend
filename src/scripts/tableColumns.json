@@ -1,0 +1,4392 @@
+{
+  "adjuster_dim": [
+    {
+      "column_name": "adjuster_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "adjuster_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "middle_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "phone_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "extension",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "cell_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "fax",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "apartment",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "adjuster_insurance_dim": [
+    {
+      "column_name": "billing_adjuster_insurances_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "appeal_status_dim": [
+    {
+      "column_name": "appeal_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appeal_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "appointment_fact": [
+    {
+      "column_name": "appointment_fact_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "patient_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "accident_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "case_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "scheduled_date_time",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "evaluation_date_time",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "facility_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "speciality_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "provider_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "technician_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "reading_provider_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "physician_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "clinic_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "clinic_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "cd_image",
+      "data_type": "text"
+    },
+    {
+      "column_name": "patient_appointment_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_priority_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "confirmation_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "cancelled_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "cancelled_comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "is_speciality_base",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "billable",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "pickup_type",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "pickup_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "pickup_suite",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "pickup_city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "pickup_state",
+      "data_type": "character varying(2)"
+    },
+    {
+      "column_name": "pickup_zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "dropoff_type",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "dropoff_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "dropoff_suite",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "dropoff_city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "dropoff_state",
+      "data_type": "character varying(2)"
+    },
+    {
+      "column_name": "dropoff_zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "date_of_check_in",
+      "data_type": "date"
+    },
+    {
+      "column_name": "time_of_check_in",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "date_of_check_out",
+      "data_type": "date"
+    },
+    {
+      "column_name": "time_of_check_out",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "time_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "appointment_priority_dim": [
+    {
+      "column_name": "appointment_priority_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_priority_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "appointment_status_dim": [
+    {
+      "column_name": "appointment_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "appointment_type_dim": [
+    {
+      "column_name": "appointment_type_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "qualifier",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "is_all_cpt_codes",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "enable_cpt_codes",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_editable",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "avoid_checkedin",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "appointment_visit_status_dim": [
+    {
+      "column_name": "appointment_visit_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_visit_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "attorney_dim": [
+    {
+      "column_name": "attorney_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "attorney_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "middle_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "phone_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "extension",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "cell_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "fax",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "apartment",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "state",
+      "data_type": "character varying(2)"
+    },
+    {
+      "column_name": "zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "attorney_firm_dim": [
+    {
+      "column_name": "attorney_firm_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "attorney_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "bill_status_dim": [
+    {
+      "column_name": "bill_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "use_for_bill",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "use_for_invoice",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "bills_fact_new": [
+    {
+      "column_name": "bill_fact_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_label",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "patient_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "accident_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "bill_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "facility_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "doctor_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "speciality_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "dos_from_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "dos_to_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "bill_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "packet_created_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "pom_generate_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "pom_received_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_received_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_sent_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denials_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "paid_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "interest_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "outstanding_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "over_payment",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "write_off_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "duration",
+      "data_type": "interval"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "time_id",
+      "data_type": "integer"
+    }
+  ],
+  "bills_recipient_dim": [
+    {
+      "column_name": "bill_recipient_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_recipient_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_recipient_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_recipient_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "patient_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_recipient_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "bill_recipient_location_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "bill_recipient_street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "bill_recipient_floor",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "bill_recipient_city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "bill_recipient_state",
+      "data_type": "character varying(250)"
+    },
+    {
+      "column_name": "bill_recipient_zip",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "bills_visit_dim": [
+    {
+      "column_name": "bill_visits_relations_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_visits_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_visit_session_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "case_categories_dim": [
+    {
+      "column_name": "case_categories_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_categroy_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "case_fact_new": [
+    {
+      "column_name": "case_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "patient_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_categroy_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_purpose_of_visit_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "is_transfer_case",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "date_of_admission",
+      "data_type": "date"
+    },
+    {
+      "column_name": "accident_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "firm_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "attorney_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "attorney_created_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "attorney_updated_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "attorney_created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "attorney_updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "attorney_deleted_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "mailing_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "mailing_apartment",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "mailing_city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "mailing_state",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "mailing_zip",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "residential_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "residential_apartment",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "residential_city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "residential_state",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "residential_zip",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "creation_source",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "pom_generate_count",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "pom_recieved_count",
+      "data_type": "character varying"
+    }
+  ],
+  "case_info_dim": [
+    {
+      "column_name": "case_insurance_firm_employer_info_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_type",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insurance_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_name",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "insurance_location_name",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "insurance_street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "insurance_apartment_suite",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insurance_city",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "insurance_state",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insurance_zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "insurance_plan_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_plan_name",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "insured_type",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insured_first_name",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insured_middle_name",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insured_last_name",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insured_relation_description",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "insured_gender",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "insured_ssn",
+      "data_type": "character varying(11)"
+    },
+    {
+      "column_name": "insured_dob",
+      "data_type": "date"
+    },
+    {
+      "column_name": "claim_no",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "policy_no",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "wcb_no",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "auth_no",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "is_policy_holder",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "member_id",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "group_no",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "adjuster_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "adjuster_first_name",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "adjuster_middle_name",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "adjuster_last_name",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "insurance_created_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_updated_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "insurance_updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "insurance_deleted_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "employer_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_type_name",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "employer_name",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "employer_street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "employer_apartment_suite",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "employer_city",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "employer_state",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "employer_zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "hired_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "end_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "is_time_losses",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "occupation",
+      "data_type": "character varying(100)"
+    },
+    {
+      "column_name": "employer_created_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_updated_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "employer_updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "employer_deleted_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "practice_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "kiosk_case_pl_created_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "kiosk_case_pl_updated_by",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "kiosk_case_pl_created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "kiosk_case_pl_updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "kiosk_case_pl_deleted_at",
+      "data_type": "timestamp without time zone"
+    }
+  ],
+  "case_insurance_employer_dim_new": [
+    {
+      "column_name": "case_insurance_firm_employer_info_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_type",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_location_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_street_address",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_apartment_suite",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_city",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_state",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_zip",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_plan_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_plan_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_type",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_first_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_middle_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_last_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_relation_description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_gender",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_ssn",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insured_dob",
+      "data_type": "date"
+    },
+    {
+      "column_name": "claim_no",
+      "data_type": "text"
+    },
+    {
+      "column_name": "policy_no",
+      "data_type": "text"
+    },
+    {
+      "column_name": "wcb_no",
+      "data_type": "text"
+    },
+    {
+      "column_name": "auth_no",
+      "data_type": "text"
+    },
+    {
+      "column_name": "is_policy_holder",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "member_id",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "group_no",
+      "data_type": "text"
+    },
+    {
+      "column_name": "adjuster_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "adjuster_first_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "adjuster_middle_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "adjuster_last_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_created_by",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_updated_by",
+      "data_type": "text"
+    },
+    {
+      "column_name": "insurance_created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "insurance_updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "insurance_deleted_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "employer_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_type_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_street_address",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_apartment_suite",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_city",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_state",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_zip",
+      "data_type": "text"
+    },
+    {
+      "column_name": "hired_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "end_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "is_time_looses",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "occupation",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_created_by",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_updated_by",
+      "data_type": "text"
+    },
+    {
+      "column_name": "employer_created_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "employer_updated_at",
+      "data_type": "timestamp without time zone"
+    },
+    {
+      "column_name": "employer_deleted_at",
+      "data_type": "timestamp without time zone"
+    }
+  ],
+  "case_insurance_firm_employer_info_dim": [
+    {
+      "column_name": "case_insurance_firm_employer_info_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "plan_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "adjuster_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insured_type",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "middle_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "relation_description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "gender",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "ssn",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "dob",
+      "data_type": "date"
+    },
+    {
+      "column_name": "claim_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "policy_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "wcb_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "auth_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_policy_holder",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "member_id",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "group_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "insurance_type",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "insurance_created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "insurance_updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "insurance_created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "insurance_updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "insurance_deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "attorney_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "attorney_created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "attorney_updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "attorney_created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "attorney_updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "attorney_deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "employer_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "hired_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "end_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "is_time_looses",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "occupation",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "employer_created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "employer_updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "employer_created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "employer_updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "employer_deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "case_purpose_of_visits_dim": [
+    {
+      "column_name": "case_purpose_of_visit_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_purpose_of_visit_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "case_status_dim": [
+    {
+      "column_name": "case_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "case_types_dim": [
+    {
+      "column_name": "case_type_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "remainder_days",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "clinic_location_dim": [
+    {
+      "column_name": "clinic_locations_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "clinic_locations_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "clinic_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "floor",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "fax",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "phone",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "extension",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "is_primary",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "status",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "clinics_dim": [
+    {
+      "column_name": "clinics_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "clinic_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "denial_dim": [
+    {
+      "column_name": "denial_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "reason",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "denial_status_dim": [
+    {
+      "column_name": "denial_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "denial_type_dim": [
+    {
+      "column_name": "denial_type_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_type_ids_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "denial_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "employer_dim": [
+    {
+      "column_name": "employer_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "employer_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "apartment",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "fax",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "phone_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "extension",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "eor_dim": [
+    {
+      "column_name": "eor_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "eor_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "eor_description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "status_id",
+      "data_type": "integer"
+    }
+  ],
+  "eor_status_dim": [
+    {
+      "column_name": "eor_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "eor_type_ids_dim": [
+    {
+      "column_name": "eor_type_ids_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_type_ids_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "eor_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "facilities_dim": [
+    {
+      "column_name": "facility_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_qualifier",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_billing_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_billing_floor",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_billing_city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_billing_state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "facility_billing_zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "facility_phone",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "facility_fax",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "facility_email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "tin",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "npi",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "ssn",
+      "data_type": "character varying(11)"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "facility_location_dim": [
+    {
+      "column_name": "facility_location_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_location_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_qualifier",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_floor",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "facility_location_zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "facility_location_phone",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "facility_location_extension_no",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "facility_location_cell_no",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "facility_location_fax",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "facility_location_email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_region_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_location_region_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_place_of_service_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_location_place_of_service_code",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_place_of_service_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "firm_location_dim": [
+    {
+      "column_name": "firm_location_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_location_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_primary_location",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_firm_location_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "apartment",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "phone_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "extension",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "cell_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "fax",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "firms_dim": [
+    {
+      "column_name": "firm_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "firm_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_firm_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "firm_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "insurance_dim": [
+    {
+      "column_name": "insurance_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "insurance_code",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_insurance_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "insurance_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "insurance_location_dim": [
+    {
+      "column_name": "insurance_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "insurance_location_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "insurance_location_code",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_insurance_location_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "primary_insurance",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "street_address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "apartment",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "phone_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "extension",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "cell_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "fax",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "patient_dim": [
+    {
+      "column_name": "patient_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "patient_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "middle_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "dob",
+      "data_type": "date"
+    },
+    {
+      "column_name": "gender",
+      "data_type": "character"
+    },
+    {
+      "column_name": "age",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "ssn",
+      "data_type": "character varying(11)"
+    },
+    {
+      "column_name": "cell_phone",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "home_phone",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "work_phone",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "height_ft",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "height_in",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "weight_lbs",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "marital_status",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "is_law_enforcement_agent",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_pregnant",
+      "data_type": "text"
+    },
+    {
+      "column_name": "patient_notes",
+      "data_type": "text"
+    },
+    {
+      "column_name": "patient_status",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "is_soft_registered",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "creation_source",
+      "data_type": "character varying(50)"
+    },
+    {
+      "column_name": "is_active",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "payment_action_type_dim": [
+    {
+      "column_name": "payment_action_type_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_action_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_action_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "payment_by_dim": [
+    {
+      "column_name": "payment_by_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_by_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_by_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "payment_fact": [
+    {
+      "column_name": "payment_fact_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "action_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_by_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "posted_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "check_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "check_amount",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "invoice_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bulk_payment",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "bulk_payment_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "payment_status_dim": [
+    {
+      "column_name": "payment_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "use_for_bill",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "use_for_invoice",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "payment_type_dim": [
+    {
+      "column_name": "payment_type_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "payment_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "use_for_bill",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "use_for_invoice",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "physician_dim": [
+    {
+      "column_name": "physician_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "physician_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "middle_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "cell_no",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "npi_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "license_no",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "physician_specialities_dim": [
+    {
+      "column_name": "physician_specialities_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "physician_specialities_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "physician_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "speciality_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "specialities_dim": [
+    {
+      "column_name": "specialities_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "speciality_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "qualifier",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "time_slot",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "over_booking",
+      "data_type": "text"
+    },
+    {
+      "column_name": "has_app",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "specialty_key",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_default",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_available",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_create_appointment",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_editable",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "is_multiple_visit",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "time_dimension": [
+    {
+      "column_name": "time_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "full_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "year",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "quarter",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "month",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "week",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "day",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "day_of_week",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "day_of_year",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "is_weekend",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_holiday",
+      "data_type": "character varying"
+    }
+  ],
+  "user_facilities_dim": [
+    {
+      "column_name": "users_relational_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "user_rel_id",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "user_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_id",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "facility_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "specialty_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "is_manual_specialty",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_primary",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "users_dim": [
+    {
+      "column_name": "user_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "user_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "email",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "role_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "role_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_work_from_home",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "allow_multiple_assignment",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "last_login",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "epcs_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "title",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "first_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "middle_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "last_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "dob",
+      "data_type": "date"
+    },
+    {
+      "column_name": "ssn",
+      "data_type": "character varying(11)"
+    },
+    {
+      "column_name": "gender",
+      "data_type": "character"
+    },
+    {
+      "column_name": "cell_no",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "home_phone",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "work_phone",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "extension",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "emergency_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "emergency_phone",
+      "data_type": "character varying(15)"
+    },
+    {
+      "column_name": "address",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "apartment_suite",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "city",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "state",
+      "data_type": "character varying(20)"
+    },
+    {
+      "column_name": "zip",
+      "data_type": "character varying(10)"
+    },
+    {
+      "column_name": "biography",
+      "data_type": "text"
+    },
+    {
+      "column_name": "hiring_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "billing_title_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "employed_by_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "department_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "designation_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "employment_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "billing_employment_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "other",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "medical_credentials",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "is_individual",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "spi",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "registration_number",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "registration_expiration_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "npi",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "upin",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "wcb_authorization",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "wcb_rating_code",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "wcb_date_of_issue",
+      "data_type": "date"
+    },
+    {
+      "column_name": "is_reading_provider",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "is_self",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "doctor_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "status",
+      "data_type": "integer"
+    }
+  ],
+  "verification_dim": [
+    {
+      "column_name": "verification_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bill_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_received_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "verification_received_description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "verification_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appeal_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "verification_sent_dim": [
+    {
+      "column_name": "verification_sent_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_sent_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_received_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_sent_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "verification_sent_description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "verification_status_dim": [
+    {
+      "column_name": "verification_status_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_status_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "verification_types_dim": [
+    {
+      "column_name": "verification_types_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_type_ids_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "verification_type_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "visit_session_state_dim": [
+    {
+      "column_name": "visit_session_state_dim_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "visit_session_state_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "visit_session_state_name",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "comments",
+      "data_type": "text"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    }
+  ],
+  "visits_fact": [
+    {
+      "column_name": "visit_fact_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "visit_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "patient_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "case_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "accident_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "case_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "visit_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "facility_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "facility_location_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "speciality_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "appointment_type_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "provider_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "technician_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "reading_provider_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "cd_image",
+      "data_type": "text"
+    },
+    {
+      "column_name": "visit_session_state_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "is_amended",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "template_type",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "visit_charges",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "document_uploaded",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "last_uploaded_document_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "created_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "updated_by",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "deleted_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "dumb_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "time_id",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "visit_cpt_code_status",
+      "data_type": "character varying"
+    },
+    {
+      "column_name": "visit_icd_code_status",
+      "data_type": "character varying"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Provider Missing Visits"
+description: "API to retrieve missing visits data for providers by case type, including missing ICD codes, CPT codes, and documents. Developers can use this data to identify and address missing information for different case types. Authorization is required to access this API."
+basePath: /analytics/api
+schemes:
+  - http
+paths:
+  /provider/missing-visits:
+    post:
+      tags: [Provider Dashboard]
+      summary: "Retrieve Provider Missing Visits Data"
+      description: "This API provides missing visits data for providers by case type, including missing ICD codes, CPT codes, and documents. Developers can use this data to identify and address missing information for different case types. Authorization is required to access this API."
+      produces:
+        - application/json
+      requestBody:
+        description: "Request body for filtering missing visits data."
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_span_id:
+                  type: integer
+                  description: >
+                    An integer representing the time period:
+                    - 1: 1 week
+                    - 2: 1 month
+                  enum: [1, 2]
+                provider_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                facility_location_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                fromDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for appointments from this date.
+                    Format: YYYY-MM-DD
+                toDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for appointments up to this date.
+                    Format: YYYY-MM-DD
+                granularity_type_id:
+                  type: integer
+                  description: >
+                    An integer representing the granularity:
+                    - 1: daily
+                    - 2: weekly
+                    - 3: monthly
+                    - 4: yearly
+                  enum: [1, 2, 3, 4]
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/MissingVisitsResponse"
+        "404":
+          description: "Data not found"
+definitions:
+  MissingVisitsResponse:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          type: object
+          properties:
+            case_type_name:
+              type: string
+            missing_icd:
+              type: string
+            missing_cpt:
+              type: string
+            missing_document:
+              type: string

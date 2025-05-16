@@ -1,0 +1,229 @@
+tags:
+  - name: Global filters Old
+    description: Global filters API for filtering data based on parameters
+paths:
+  /filter:
+    get:
+      tags: [Global filters]
+      summary: "Filters data globally to populate each report"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        description: "Request body for filtering data based on requirements"
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_span_id:
+                  type: integer
+                  required: false
+                  description: >
+                    An integer representing the time period:
+                    - 1: 1 week
+                    - 2: 1 month
+                    - 3: 6 months
+                    - 4: 1 year
+                    - 5: Month to Date
+                  enum: [1, 2, 3, 4, 5]
+                month_id:
+                  type: integer
+                  required: false
+                  description: >
+                    An integer representing the month in months dropdown:
+                    - 1: January
+                    - 2: February
+                    - 3: March
+                    - 4: April
+                    - 5: May
+                    - 6: June
+                    - 7: July
+                    - 8: August
+                    - 9: September
+                    - 10: October
+                    - 11: November
+                    - 12: December
+                  enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                speciality_ids:
+                  required: false
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                provider_ids:
+                  required: false
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                facility_location_ids:
+                  required: false
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                fromDate:
+                  required: false
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for summary charts from this date.
+                    Format: YYYY-MM-DD
+                toDate:
+                  required: false
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for summary charts up to this date.
+                    Format: YYYY-MM-DD
+                granularity_type_id:
+                  required: false
+                  type: integer
+                  description: >
+                    An integer representing the granularity:
+                    - 1: daily
+                    - 2: weekly
+                    - 3: monthly
+                    - 4: yearly
+                  enum: [1, 2, 3, 4]
+              required:
+                - time_span_id
+                - speciality_ids
+                - provider_ids
+                - facility_location_ids
+                - fromDate
+                - toDate
+                - granularity_type_id
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: "Filtered Data returned"
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/responseData"
+        404:
+          description: "Data not found"
+  /specialities:
+    get:
+      tags: [Global filters]
+      summary: "List of Specialities to populate dropdown"
+      produces:
+        - application/json
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/specialityresponseData"
+        404:
+          description: "Data not found"
+  /providers:
+    get:
+      tags: [Global filters]
+      summary: "List of Providers to populate dropdown"
+      produces:
+        - application/json
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/providersresponseData"
+        404:
+          description: "Data not found"
+  /locations:
+    get:
+      tags: [Global filters]
+      summary: "List of Locations to populate dropdown"
+      produces:
+        - application/json
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/facilityLocationresponseData"
+        404:
+          description: "Data not found"
+definitions:
+  responseData:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        specialities:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+        providers:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+        locations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+  specialityresponseData:
+    type: array
+    items:
+      type: object
+      properties:
+        speciality_id:
+          type: integer
+        speciality_name:
+          type: string
+  providersresponseData:
+    type: array
+    items:
+      type: object
+      properties:
+        provider_id:
+          type: integer
+        provider_name:
+          type: string
+  facilityLocationresponseData:
+    type: array
+    items:
+      type: object
+      properties:
+        facility_name:
+          type: string
+        facility_locations:
+          type: array
+          items:
+            type: object
+            properties:
+              facility_location_ids:
+                type: integer
+              facility_location_name:
+                type: string

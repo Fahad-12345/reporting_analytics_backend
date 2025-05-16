@@ -1,0 +1,122 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Claims Overview"
+description: "This API gives us data to analyze different statuses of claims i.e POM Generated, POM Received, Verified, Denied, Partially Paid, Fully Paid. This API can be used by developers to build charts for the described data, which can be further used for insights. Authorization will be required to access this API."
+basePath: /api
+schemes:
+  - http
+paths:
+  /admin//claims_overview:
+    post:
+      tags: [Admin Dashboard]
+      summary: "Retrieve different Statuses of Claims"
+      description: "This API gives us data to analyze different statuses of claims i.e POM Generated, POM Received, Verified, Denied, Partially Paid, Fully Paid. This API can be used by developers to build charts for the described data, which can be further used for insights. Authorization will be required to access this API."
+      parameters: []
+      requestBody:
+        description: "Request body for filters."
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_span_id:
+                  type: integer
+                  description: >
+                    An integer representing the time period:
+                    - 1: 1 week
+                    - 2: 1 month
+                    - 3: 6 months
+                    - 4: 1 year
+                    - 5: Month to Date
+                  enum: [1, 2, 3, 4, 5]
+                month_id:
+                  type: integer
+                  description: >
+                    An integer representing the month in months dropdown:
+                    - 1: January
+                    - 2: February
+                    - 3: March
+                    - 4: April
+                    - 5: May
+                    - 6: June
+                    - 7: July
+                    - 8: August
+                    - 9: September
+                    - 10: October
+                    - 11: November
+                    - 12: December
+                  enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                speciality_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                provider_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                facility_location_ids:
+                  type: array
+                  items:
+                    type: integer
+                  example: [1, 2, 3]
+                fromDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for summary charts from this date.
+                    Format: YYYY-MM-DD
+                toDate:
+                  type: string
+                  format: date
+                  description: >
+                    Retrieve data for summary charts up to this date.
+                    Format: YYYY-MM-DD
+                granularity_type_id:
+                  type: integer
+                  description: >
+                    An integer representing the granularity:
+                    - 1: daily
+                    - 2: weekly
+                    - 3: monthly
+                    - 4: yearly
+                  enum: [1, 2, 3, 4]
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_amount:
+                    type: number
+                  billed_amount:
+                    type: number
+                  Claims:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        claimStatus:
+                          type: string
+                        noOfClaims:
+                          type: integer
+                        amountOfClaim:
+                          type: number
+                        percentage:
+                          type: number
+
+        400:
+          description: "Bad request"
+        401:
+          description: "You are not Authorized"
+        404:
+          description: "Data not found for given parameters"
+        500:
+          description: "Internal server error"

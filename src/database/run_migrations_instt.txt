@@ -1,0 +1,2 @@
+Step 0 - Run "npm install -g db-migrate" and "npm install -g db-migrate-pg" commands one by one to install db-migrate runtime globally.
+Step 1 - Run "db-migrate up --config config.js" command inside "src/database" directory.

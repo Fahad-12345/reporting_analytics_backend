@@ -1,0 +1,166 @@
+image: node:20
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Build
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+          artifacts:
+            - build/**
+      - step:
+          name: Build and deploy in ECS
+          deployment: development
+          image: atlassian/pipelines-awscli
+          caches:
+            - docker
+          services:
+            - docker
+          script:
+            - pip3 install awscli
+            #- TAG="latest"
+            - docker build -t cm-analytics .
+            - pipe: atlassian/aws-ecr-push-image:1.2.2
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-1
+                IMAGE_NAME: cm-analytics
+                TAGS: "v1.$BITBUCKET_BUILD_NUMBER latest"
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            - aws configure set region us-east-1
+            # Assuming the ECS service is already created and the task definition is defined
+            - aws ecs update-service --cluster dev-cluster --service cm-analytics-dev-service --force-new-deployment
+      - step:
+          name: DB Migration
+          deployment: migration
+          image: atlassian/pipelines-awscli
+          caches:
+            - docker
+          services:
+            - docker
+          condition:
+            changesets:
+              includePaths:
+                - "src/database/**/**"
+          script:
+            - pip3 install awscli
+            #- TAG="latest"
+            - docker build -t cm-analytics .
+            - pipe: atlassian/aws-ecr-push-image:1.2.2
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-1
+                IMAGE_NAME: cm-analytics
+                TAGS: "v1.$BITBUCKET_BUILD_NUMBER latest"
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            - aws configure set region us-east-1
+            # Assuming the ECS service is already created and the task definition is defined
+            - aws ecs update-service --cluster dev-cluster --service cm-analytics-migration-dev-service --desired-count 1 --force-new-deployment
+    staging:
+      - step:
+          name: Build
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+          artifacts:
+            - build/**
+      - step:
+          name: Build and deploy in ECS
+          deployment: development
+          image: atlassian/pipelines-awscli
+          caches:
+            - docker
+          services:
+            - docker
+          script:
+            - pip3 install awscli
+            #- TAG="latest"
+            - docker build -t cm-analytics-staging .
+            - pipe: atlassian/aws-ecr-push-image:1.2.2
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-1
+                IMAGE_NAME: cm-analytics-staging
+                TAGS: "v1.$BITBUCKET_BUILD_NUMBER latest"
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            - aws configure set region us-east-1
+            # Assuming the ECS service is already created and the task definition is defined
+            - aws ecs update-service --cluster staging-cluster --service cm-analytics-staging-service --desired-count 1 --force-new-deployment
+      - step:
+          name: DB Migration
+          deployment: migration
+          image: atlassian/pipelines-awscli
+          caches:
+            - docker
+          services:
+            - docker
+          condition:
+            changesets:
+              includePaths:
+                - "src/database/**/**"
+          script:
+            - pip3 install awscli
+            - docker build -t cm-analytics-staging .
+            - pipe: atlassian/aws-ecr-push-image:1.2.2
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-1
+                IMAGE_NAME: cm-analytics-staging
+                TAGS: "v1.$BITBUCKET_BUILD_NUMBER latest"
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            - aws configure set region us-east-1
+            # Assuming the ECS service is already created and the task definition is defined
+            - aws ecs update-service --cluster staging-cluster --service cm-analytics-migration-staging-service --desired-count 1 --force-new-deployment
+    production:
+      - step:
+          name: Code Build and Deployment 
+          script:
+            - echo "Code Build and Deployment"
+            
+      - step:
+          name: Build
+          trigger: "manual"    
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build
+          artifacts:
+            - build/**
+      - step:
+          name: Build and deploy in ECS
+          deployment: production
+          image: atlassian/pipelines-awscli
+          caches:
+            - docker
+          services:
+            - docker
+          script:
+            - pip3 install awscli
+            #- TAG="latest"
+            - docker build -t cm-prod-analytics .
+            - pipe: atlassian/aws-ecr-push-image:1.2.2
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-1
+                IMAGE_NAME: cm-prod-analytics
+                TAGS: "v1.$BITBUCKET_BUILD_NUMBER latest"
+            - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            - aws configure set region us-east-1
+            # Assuming the ECS service is already created and the task definition is defined
+            - aws ecs update-service --cluster production-cluster --service cm-analytic-production-service --force-new-deployment

@@ -1,0 +1,210 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Payment Detail Report API"
+  description: "This API retrieves payment details report based on provided filters such as employer IDs, case type IDs, attorney IDs, etc."
+basePath: /analytics/api/report
+schemes:
+  - http
+paths:
+  /getPaymentDetailReport:
+    post:
+      tags: [Payment Detail Report]
+      summary: "Retrieve payment detail report"
+      description: "This API retrieves payment details report based on provided filters such as employer IDs, case type IDs, attorney IDs, etc."
+      parameters: []
+      requestBody:
+        description: "Request body for payment detail report."
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                  description: "Page number for pagination"
+                  example: 1
+                per_page:
+                  type: integer
+                  description: "Number of items per page"
+                  example: 10
+                pagination:
+                  type: integer
+                  description: "Pagination type"
+                  example: 1
+                employer_ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: "Employer IDs"
+                  example: [2259]
+                case_type_ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: "Case type IDs"
+                  example: [5]
+                attorney_ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: "Attorney IDs"
+                  example: [293]
+                bill_recipient_type_id:
+                  type: integer
+                  description: "Bill recipient type ID"
+                  example: 2
+                date_type:
+                  type: integer
+                  description: "Date type"
+                  example: 2
+                doctor_ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: "Doctor IDs"
+                  example: [133]
+                facility_location_ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: "Facility location IDs"
+                  example: [40, 62]
+                start_date:
+                  type: string
+                  format: date
+                  description: "Start date for report data"
+                  example: "2024-06-03"
+                end_date:
+                  type: string
+                  format: date
+                  description: "End date for report data"
+                  example: "2024-06-19"
+      responses:
+        "200":
+          description: "Successful response"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "success"
+              status:
+                type: integer
+                example: 200
+              result:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      actualdata:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            data:
+                              type: string
+                            bill_no:
+                              type: string
+                            case_id:
+                              type: integer
+                            billed_date:
+                              type: string
+                              format: date
+                            no_of_days:
+                              type: integer
+                            bill_status:
+                              type: string
+                            eor_status:
+                              type: string
+                            denial_status:
+                              type: string
+                            verification_status:
+                              type: string
+                            payment_status:
+                              type: string
+                            case_type:
+                              type: string
+                            patient_name:
+                              type: string
+                            speciality:
+                              type: string
+                            doa:
+                              type: string
+                              format: date
+                            practice_location:
+                              type: string
+                            provider_name:
+                              type: string
+                            first_visit_date:
+                              type: string
+                              format: date
+                            last_visit_date:
+                              type: string
+                              format: date
+                            posted_date:
+                              type: string
+                              format: date
+                            check_date:
+                              type: string
+                              format: date
+                            check_no:
+                              type: string
+                            check_amount:
+                              type: string
+                            billed_amount:
+                              type: string
+                            paid_amount:
+                              type: string
+                            outstanding_amount:
+                              type: string
+                            write_off:
+                              type: string
+                            overpayment:
+                              type: string
+                            interest:
+                              type: string
+                            attorney_name:
+                              type: string
+                            firm_name:
+                              type: string
+                            payment_type:
+                              type: string
+                            paid_by:
+                              type: string
+                            insurance_name:
+                              type: string
+                            bill_recipient_name:
+                              type: string
+                            bill_recipient_type:
+                              type: string
+                            denial_type:
+                              type: string
+                            created_at:
+                              type: string
+                              format: date-time
+                            updated_at:
+                              type: string
+                              format: date-time
+                            payment_created_at:
+                              type: string
+                              format: date-time
+                            payment_updated_at:
+                              type: string
+                              format: date-time
+                            total_count:
+                              type: string
+        400:
+          description: "Bad request"
+        401:
+          description: "You are not authorized"
+        404:
+          description: "Data not found for given parameters"
+        500:
+          description: "Internal server error"
+      security:
+        - bearerAuth: []
+        - basicAuth: []
+      deprecated: false

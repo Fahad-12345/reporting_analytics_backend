@@ -1,0 +1,117 @@
+tags:
+  - name: Global filters
+    description: Global filters List API
+paths:
+  /filter-dropdowns:
+    get:
+      tags: [Global filters]
+      summary: "List of Locations, Specialities, Providers to populate dropdown"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        description: "Request body"
+        required: false
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: "Dropdowns Data returned"
+          content:
+            application/json:
+              schema:
+                $ref: "#/definitions/dropdownResponseData"
+        404:
+          description: "Data not found"
+definitions:
+  dropdownResponseData:
+    type: array
+    items:
+      type: object
+      properties:
+        dependents:
+          type: array
+          items:
+            type: object
+            properties:
+              facility_id:
+                type: integer
+                example: 1
+              facility_name:
+                type: string
+                example: CitiMed Complete Medical Care PC
+              locations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    facility_location_id:
+                      type: integer
+                      example: 6
+                    facility_location_name:
+                      type: string
+                      example: Queens - Jamaica
+                    facility_id:
+                      type: integer
+                      example: 1
+                    facility_name:
+                      type: string
+                      example: CitiMed Complete Medical Care PC
+              specialities:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    facility_location_id:
+                      type: integer
+                      example: 6
+                    facility_location_name:
+                      type: string
+                      example: Queens - Jamaica
+                    speciality_id:
+                      type: integer
+                      example: 15
+                    speciality_name:
+                      type: string
+                      example: Diagnostic
+                    provider_id:
+                      type: integer
+                      example: 1587
+                    provider_name:
+                      type: string
+                      example: Test  Physician
+              providers:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    facility_location_id:
+                      type: integer
+                      example: 6
+                    facility_location_name:
+                      type: string
+                      example: Queens - Jamaica
+                    speciality_id:
+                      type: integer
+                      example: 15
+                    speciality_name:
+                      type: string
+                      example: Diagnostic
+                    provider_id:
+                      type: integer
+                      example: 1587
+                    provider_name:
+                      type: string
+                      example: Test  Physician
+        independents:
+          type: array
+          items:
+            type: object
+            properties:
+              case_type_id:
+                type: integer
+                example: 1
+              case_type_name:
+                type: string
+                example: WC
