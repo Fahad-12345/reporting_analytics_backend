@@ -26,7 +26,7 @@ To build and run this app locally you will need a few things:
 # Getting started
 - Clone the repository
 ```
-git clone https://ameer_hamza_ovada@bitbucket.org/vladmoshe/analytics_backend_service.git
+git clone https://github.com/Fahad-12345/reporting_analytics_backend.git
 ```
 - Install dependencies
 ```
