@@ -153,6 +153,3 @@ In that file you'll find two sections:
 
 To install or update these dependencies you can use `npm install` or `npm update`.
 
-## License
-Copyright (c) Deline Media LLC. All rights reserved.
-Licensed under the [MIT](LICENSE.txt) License.
